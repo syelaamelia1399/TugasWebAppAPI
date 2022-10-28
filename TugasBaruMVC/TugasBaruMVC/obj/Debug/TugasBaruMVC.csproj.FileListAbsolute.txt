@@ -1,0 +1,11 @@
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\TugasBaruMVC.exe.config
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\TugasBaruMVC.exe
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\TugasBaruMVC.pdb
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.AssemblyReference.cache
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.SuggestedBindingRedirects.cache
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.CoreCompileInputs.cache
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.exe
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.pdb
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\System.Data.SqlClient.dll
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\System.Data.SqlClient.xml
+D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.CopyComplete
