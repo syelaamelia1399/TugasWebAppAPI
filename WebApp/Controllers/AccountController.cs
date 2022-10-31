@@ -25,6 +25,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Login(string email, string password)
         {
             var data = myContext.Users
@@ -39,7 +40,7 @@ namespace WebApp.Controllers
                     Email = data.Employee.Email,
                     Role = data.Role.Name
                 };
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home", responseLogin);
             }
             return View();
         }
@@ -50,6 +51,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Register(string fullName, string email, DateTime birthDate, string password)
         {
             Employee employee = new Employee()
@@ -76,7 +78,59 @@ namespace WebApp.Controllers
             }
             return View();
         }
-        
+
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ChangePassword(string email, string password, string newPassword)
+        {
+            var data = myContext.Users
+                .Include(x => x.Employee)
+                .SingleOrDefault(x => x.Employee.Email.Equals(email) && x.Password.Equals(password));
+            if (data != null)
+            {
+                data.Password = newPassword;
+                myContext.Entry(data).State = EntityState.Modified;
+
+                var result = myContext.SaveChanges();
+                if(result > 0)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+            return View();
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ForgetPassword(string email, string newPassword)
+        {
+            var data = myContext.Users
+                .Include(x => x.Employee)
+                .SingleOrDefault(x => x.Employee.Email.Equals(email));
+            if (data != null)
+            {
+                data.Password = newPassword;
+                myContext.Entry(data).State = EntityState.Modified;
+
+                var result = myContext.SaveChanges();
+                if (result > 0)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+            return View();
+        }
+
         /*
         public ActionResult ForgotPassword()
         {
