@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using WebApp.Context;
 using WebApp.Models;
 using WebApp.ViewModel;
@@ -19,9 +20,16 @@ namespace WebApp.Controllers
         // GET ALL
         public IActionResult Index()
         {
-            var data = myContext.Departments.ToList();
-            return View(data);
+            //var data = myContext.Departments.ToList();
+            //return View(data);
+            //return View(GetAllEmployee());
+            return View();
         }
+
+        //public IEnumerable<Department> GetAllEmployee()
+        //{
+        //    return myContext.Departments.ToList<Department>();
+        //}
 
         // GET BY ID
         public IActionResult Details(int id)
@@ -58,8 +66,15 @@ namespace WebApp.Controllers
         // UPDATE - GET POST
         public IActionResult Edit(int id)
         {
-            var data = myContext.Departments.Find(id);
-            return View(data);
+            //var data = myContext.Departments.Find(id);
+            //return View(data);
+            var DropDown = new DepartmentListViewModel();
+            DropDown.Divisions = myContext.Divisions.Select(s => new SelectListItem()
+            {
+                Value = s.Id.ToString(),
+                Text = s.Name
+            }).ToList();
+            return View(DropDown);
         }
 
         [HttpPost]

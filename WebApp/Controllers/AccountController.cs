@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using NuGet.Packaging.Signing;
 using WebApp.Context;
+using WebApp.Handlers;
 using WebApp.Models;
 using WebApp.ViewModel;
 
@@ -31,18 +32,48 @@ namespace WebApp.Controllers
             var data = myContext.Users
                 .Include(x => x.Employee)
                 .Include(x => x.Role)
-                .SingleOrDefault(x => x.Employee.Email.Equals(email) && x.Password.Equals(password));
-            if(data != null)
+                .SingleOrDefault(x => x.Employee.Email.Equals(email));  //pake hash, langkah awal cek email ada apa gk
+            
+            var result = Hashing.ValidatePassword(password, data.Password);
+            if (result)
             {
+                if (data != null)
+                {
+                    HttpContext.Session.SetInt32("Id", data.Id);
+                    HttpContext.Session.SetString("FullName", data.Employee.FullName);
+                    HttpContext.Session.SetString("Email", data.Employee.Email);
+                    HttpContext.Session.SetString("Role", data.Role.Name);
+
+                    return RedirectToAction("Index", "Home");
+                }
+                return View();
+            }
+            return View();
+
+           
+            // cara password plain text
+            //.SingleOrDefault(x => x.Employee.Email.Equals(email) && x.Password.Equals(password));
+            /*
+            if (data != null)
+            {
+                HttpContext.Session.SetInt32("Id", data.Id);
+                HttpContext.Session.SetString("FullName", data.Employee.FullName);
+                HttpContext.Session.SetString("Email", data.Employee.Email);
+                HttpContext.Session.SetString("Role", data.Role.Name);
+
+                
                 ResponseLogin responseLogin = new ResponseLogin()
                 {
                     FullName = data.Employee.FullName,
                     Email = data.Employee.Email,
                     Role = data.Role.Name
                 };
-                return RedirectToAction("Index", "Home", responseLogin);
+                
+
+                return RedirectToAction("Index", "Home");
             }
             return View();
+            */
         }
 
         public IActionResult Register()
@@ -60,21 +91,31 @@ namespace WebApp.Controllers
                 Email = email,
                 BirthDate = birthDate
             };
-            myContext.Employees.Add(employee);
-            var result = myContext.SaveChanges();
-            if(result > 0)
+            var data = myContext.Employees
+                .SingleOrDefault(x => x.Email.Equals(email));
+            if (data != null)
             {
-                var id = myContext.Employees.SingleOrDefault(x => x.Email.Equals(email)).Id;
-                User user = new User()
+                return View();
+            }
+            else
+            {
+                myContext.Employees.Add(employee);
+                var result = myContext.SaveChanges();
+                if (result > 0)
                 {
-                    Id = id,
-                    Password = password,
-                    RoleId = 1
-                };
-                myContext.Users.Add(user);
-                var resultUser = myContext.SaveChanges();
-                if(resultUser > 0)
-                    return RedirectToAction("Login", "Account");
+                    var id = myContext.Employees.SingleOrDefault(x => x.Email.Equals(email)).Id;
+                    User user = new User()
+                    {
+                        Id = id,
+                        // Hashing
+                        Password = Hashing.HashPassword(password),
+                        RoleId = 1
+                    };
+                    myContext.Users.Add(user);
+                    var resultUser = myContext.SaveChanges();
+                    if (resultUser > 0)
+                        return RedirectToAction("Login", "Account");
+                }
             }
             return View();
         }
@@ -90,17 +131,22 @@ namespace WebApp.Controllers
         {
             var data = myContext.Users
                 .Include(x => x.Employee)
-                .SingleOrDefault(x => x.Employee.Email.Equals(email) && x.Password.Equals(password));
-            if (data != null)
+                .SingleOrDefault(x => x.Employee.Email.Equals(email));
+            var result = Hashing.ValidatePassword(password, data.Password);
+            if (result)
             {
-                data.Password = newPassword;
-                myContext.Entry(data).State = EntityState.Modified;
-
-                var result = myContext.SaveChanges();
-                if(result > 0)
+                if (data != null)
                 {
-                    return RedirectToAction("Login", "Account");
+                    data.Password = Hashing.HashPassword(newPassword);
+                    myContext.Entry(data).State = EntityState.Modified;
+
+                    var resultPassword = myContext.SaveChanges();
+                    if (resultPassword > 0)
+                    {
+                        return RedirectToAction("Login", "Account");
+                    }
                 }
+                return View();
             }
             return View();
         }
@@ -119,7 +165,7 @@ namespace WebApp.Controllers
                 .SingleOrDefault(x => x.Employee.Email.Equals(email));
             if (data != null)
             {
-                data.Password = newPassword;
+                data.Password = Hashing.HashPassword(newPassword);
                 myContext.Entry(data).State = EntityState.Modified;
 
                 var result = myContext.SaveChanges();

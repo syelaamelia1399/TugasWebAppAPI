@@ -9,3 +9,14 @@ D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.pdb
 D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\System.Data.SqlClient.dll
 D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\System.Data.SqlClient.xml
 D:\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.CopyComplete
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\TugasBaruMVC.exe.config
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\TugasBaruMVC.exe
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\TugasBaruMVC.pdb
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\System.Data.SqlClient.dll
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\bin\Debug\System.Data.SqlClient.xml
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.AssemblyReference.cache
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.SuggestedBindingRedirects.cache
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.CoreCompileInputs.cache
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.csproj.CopyComplete
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.exe
+C:\Users\ameli\OneDrive\Documents\MCC\TugasBaruMVC\TugasBaruMVC\TugasBaruMVC\obj\Debug\TugasBaruMVC.pdb

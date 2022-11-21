@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TugasBaruMVC", "TugasBaruMVC\TugasBaruMVC.csproj", "{D4C734B7-B791-41FE-97B5-D483E53E04C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "..\WebApp\WebApp.csproj", "{0DFDE3AC-3A9B-4D6A-9B61-2E0F0549BD62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "..\WebApp\WebApp.csproj", "{0DFDE3AC-3A9B-4D6A-9B61-2E0F0549BD62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "..\API\API.csproj", "{488FD6D0-9640-4DCB-B838-702EBC3D3282}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0DFDE3AC-3A9B-4D6A-9B61-2E0F0549BD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DFDE3AC-3A9B-4D6A-9B61-2E0F0549BD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DFDE3AC-3A9B-4D6A-9B61-2E0F0549BD62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{488FD6D0-9640-4DCB-B838-702EBC3D3282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{488FD6D0-9640-4DCB-B838-702EBC3D3282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{488FD6D0-9640-4DCB-B838-702EBC3D3282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{488FD6D0-9640-4DCB-B838-702EBC3D3282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

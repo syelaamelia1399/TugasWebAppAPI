@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "D:\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "D:\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\MCC\\TugasBaruMVC\\WebApp\\obj\\",
+        "projectPath": "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\WebApp.csproj",
+        "packagesPath": "C:\\Users\\ameli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ameli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
@@ -78,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

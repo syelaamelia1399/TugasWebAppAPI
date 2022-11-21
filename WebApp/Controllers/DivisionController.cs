@@ -17,8 +17,22 @@ namespace WebApp.Controllers
         // GET ALL
         public IActionResult Index()
         {
-            var data = myContext.Divisions.ToList();    
-            return View(data);
+            // Untuk Authorize
+            /*
+            var role = HttpContext.Session.GetString("Role");
+            if(role == "Admin")
+            {
+                var data = myContext.Divisions.ToList();
+                return View(data);
+            }
+            else if (role == null)
+            {
+                return RedirectToAction("UnAuthorized", "ErrorPage");
+            }
+            return RedirectToAction("Forbidden", "ErrorPage");
+            */
+
+            return View();
         }
         
         // GET BY ID
@@ -40,6 +54,8 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Division division)
         {
+            division.CreatedBy = HttpContext.Session.GetString("FullName");
+            division.CreateDate = DateTime.Now.ToLocalTime();
             myContext.Divisions.Add(division);
             var result = myContext.SaveChanges();
             if (result > 0)
