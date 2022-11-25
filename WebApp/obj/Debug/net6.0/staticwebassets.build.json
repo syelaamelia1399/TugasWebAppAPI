@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IxMoHxTgz9b5QTfeAcSfLp6gSWo/3AA5wZRt2cQ6MoA=",
+  "Hash": "vFfhpefdU9JbdZp+lEw7JahZ9pWye4mSEF5t9AQ2QLQ=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\wwwroot\\js\\chart.js",
+      "SourceId": "WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\wwwroot\\",
+      "BasePath": "_content/WebApp",
+      "RelativePath": "js/chart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\chart.js"
     },
     {
       "Identity": "C:\\Users\\ameli\\OneDrive\\Documents\\MCC\\TugasBaruMVC\\WebApp\\wwwroot\\js\\department.js",

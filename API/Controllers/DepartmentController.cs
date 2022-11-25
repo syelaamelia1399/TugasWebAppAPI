@@ -49,6 +49,7 @@ namespace API.Controllers
         [HttpPut]
         public ActionResult Update(Department department)
         {
+
             var result = _repository.Update(department);
             if(result == 0)
             {

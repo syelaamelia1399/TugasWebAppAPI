@@ -9,7 +9,7 @@
     <h1>Index</h1>
 
     <p>
-        <a asp-action="Create" id="addNew" onclick="AddNew()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewModal">Add New</a>
+        <a asp-action="Create" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewModal">Add New</a>
     </p>
     <table class="table" id="tableDepartment">
         <thead>
@@ -31,12 +31,16 @@
                 <div class="modal-header">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="getdetail">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
-                </div>
+                <form class="m-t-10">
+                    <div class="modal-body">
+                        <div id="getdetail">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -48,30 +52,28 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel1">Add New</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <form class="m-t-10">
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label class="form-group-float-table is-visible">Name</label>
-                                    <input type="text" id="input-name-department" name="name" class="form-control"
-                                           placeholder="Name" data-toggle="tooltip"
-                                           data-placement="bottom" title="Name" />
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="form-group-float-table is-visible">Division Id</label>
-                                    <input type="number" id="input-divisionid-department" name="divisionId" class="form-control"
-                                           placeholder="Division Id" data-toggle="tooltip"
-                                           data-placement="bottom" title="divisionId" />
-                                </div>
+                <form class="m-t-10">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="form-group-float-table is-visible">Name</label>
+                                <input type="text" id="input-name-department" class="form-control"
+                                        placeholder="Name" data-toggle="tooltip"
+                                        data-placement="bottom" />
                             </div>
-                            <div id="btn-addnew-department"></div>
-                        </form>
+                            <div class="form-group col-md-6">
+                                <label class="form-group-float-table is-visible">Division Id</label>
+                                <input type="number" id="input-divisionid-department" class="form-control"
+                                        placeholder="Division Id" data-toggle="tooltip"
+                                        data-placement="bottom" />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="SaveNew()" data-bs-dismiss="modal">Add</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -98,30 +100,17 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel3">Edit</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <form class="m-t-10">
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label class="form-group-float-table is-visible">Name</label>
-                                    <input type="text" name="name" class="form-control"
-                                           placeholder="Name" data-toggle="tooltip"
-                                           data-placement="bottom" title="Name" />
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="form-group-float-table is-visible">Division Id</label>
-                                    <input type="number" name="divisionId" class="form-control"
-                                           placeholder="Division Id" data-toggle="tooltip"
-                                           data-placement="bottom" title="divisionId" />
-                                </div>
-                            </div>
-                        </form>
+                <form class="m-t-10">
+                    <div class="modal-body">
+                        <div id="editBody">
+
+                      </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <div id="btn-edit-department"></div>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="Edit()" data-bs-dismiss="modal">Save Changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

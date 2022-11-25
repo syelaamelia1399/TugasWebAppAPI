@@ -54,5 +54,10 @@ namespace API.Repository.Data
             }
             return 0;
         }
+
+        public int Update(int id, Division Entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
